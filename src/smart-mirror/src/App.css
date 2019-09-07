@@ -5,6 +5,16 @@
   height: 100%;
 }
 
+.Calendar {
+  color: #FFFFFF;
+  position:absolute;
+  width: auto;
+  top: 1rem;
+  left: 1rem;
+  padding: 0;
+  margin: 0;
+}
+
 .Weather {
   color: #FFFFFF;
   position:absolute;
