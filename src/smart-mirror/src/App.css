@@ -1,0 +1,28 @@
+.App {
+  text-align: center;
+  background-color: #282c34;
+  width: 100%;
+  height: 100%;
+}
+
+.Weather {
+  color: #FFFFFF;
+  position:absolute;
+  width: auto;
+  bottom: 1rem;
+  left: 1rem;
+  padding: 0;
+  margin: 0;
+  margin-left: 2rem;
+}
+
+.Clock {
+  color: #FFFFFF;
+  position:absolute;
+  width: auto;
+  bottom: 1rem;
+  right: 1rem;
+  padding: 0;
+  margin: 0;
+  margin-right: 2rem;
+}

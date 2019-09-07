@@ -1,0 +1,12 @@
+.WeatherIcon {
+    color: #FFFFFF;
+}
+
+.WeatherText {
+    color: #FFFFFF;
+}
+
+.WeatherColumn {
+    margin: 0 1.2rem 1.2rem 0;
+    padding: 0;
+}
