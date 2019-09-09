@@ -14,12 +14,11 @@ export default class Weather extends Component {
     }
     
   componentDidMount() {
-    // this.timerID = setInterval(
-    //   () => this.tick(),
-    //   5000
-    // );
-
     this.tick();
+    this.timerID = setInterval(
+      () => this.tick(),
+      10*60*1000
+    );
   }
 
   componentWillUnmount() {
@@ -43,44 +42,52 @@ export default class Weather extends Component {
         let sunrise = new Date(weather.sys.sunrise*1000);
         let sunset = new Date(weather.sys.sunset*1000);
 
+        let precipitation = weather.hasOwnProperty("precipitation") ? weather.precipitation.value : 0;
+
         return (
             <div className="row">
                 <div className="col p-0">
                     {/** 24H Temperature Graph */}                    
                     <div className="row">
+                      <div className="CurrentWeather">
+                        {Math.floor(weather.main.temp).toString()}&#176; <i className="fas fa-sun"></i>
+                      </div>
                     </div>
-                    {/** Current Weather */}
+                    <div className="row">
+                      <div className="WeatherDescription text-capitalize">
+                        {weather.weather[0].description}
+                      </div>
+                    </div>
                     <div className="row">
                         {/** Percipitation */}
-                        <div className="col-auto WeatherColumn">
-                          <i className="fas fa-2x fa-umbrella WeatherIcon"></i>
-                        </div>
+                        <div className="col-auto WeatherRow">
+                          <div className="WeatherText">{precipitation.toString()}% <i className="fas fa-2x fa-umbrella WeatherIcon"></i></div>
+                        </div>                        
+                    </div>
+                    <div className="row">
                         {/** Wind */}
-                        <div className="col-auto WeatherColumn">
-                          <i className="fas fa-2x fa-wind WeatherIcon"></i>
-                          <div className="WeatherText">{weather.wind.speed} MPH {weather.wind.deg}&#176;</div>
-                        </div>
-                        {/** Humidity */}
+                        <div className="col-auto WeatherRow">                          
+                          <div className="WeatherText">{Math.ceil(weather.wind.speed).toString()} MPH <i className="fas fa-2x fa-wind WeatherIcon"></i></div>
+                        </div>                    
+                    </div>
+                    {/* <div className="row">
                         <div className="col-auto WeatherColumn">
                           <i className="fas fa-2x fa-cloud-meatball WeatherIcon"></i>
                           <div className="WeatherText">{weather.main.humidity} %</div>                        
-                        </div>
-                        {/** Sunrise */}
+                        </div>                    
+                    </div>
+                    <div className="row">
                         <div className="col-auto WeatherColumn">
                           <i className="fas fa-2x fa-sun WeatherIcon"></i>
                         <div className="WeatherText">{sunrise.toLocaleTimeString()}</div> 
-                        </div>
-                        {/** Sunset */}
+                        </div>                    
+                    </div>
+                    <div className="row">
                         <div className="col-auto WeatherColumn">
                           <i className="fas fa-2x fa-moon WeatherIcon"></i>
                         <div className="WeatherText">{sunset.toLocaleTimeString()}</div> 
-                        </div>
-                        {/** Sky */}
-                        <div className="col-auto WeatherColumn">
-                          <i className="fas fa-2x fa-cloud-sun WeatherIcon"></i>
-                          <div className="WeatherText">{weather.weather[0].description}</div> 
-                        </div>
-                    </div>
+                        </div>                    
+                    </div> */}
                 </div>
             </div>
         );

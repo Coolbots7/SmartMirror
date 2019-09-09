@@ -1,12 +1,40 @@
-.WeatherIcon {
-    color: #FFFFFF;
+.CurrentWeather {
+    font-weight: lighter;
+    font-size: 5rem;
+    margin-top: -1.8rem;
+    margin-right: 1rem;
+    text-align: right;
+    width: 100%;
+}
+
+.WeatherDescription {
+    font-weight: lighter;
+    font-size: 2rem;
+    margin-top: -0.8rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    text-align: right;
+    width: 100%;
+}
+
+.WeatherRow {
+    width: 100%;
+    padding: 0.3rem;
+    margin-right: 1rem;
+    padding: 0;
 }
 
 .WeatherText {
     color: #FFFFFF;
+    font-weight: lighter;
+    font-size: 1.6rem;
+    margin-top: -0.5rem;
+    text-align: right;
+    width: 100%;
 }
 
-.WeatherColumn {
-    margin: 0 1.2rem 1.2rem 0;
-    padding: 0;
+.WeatherIcon {
+    font-size: 1.6rem;
+    margin-right: 1rem;
+    margin-left: 0.5rem;
 }
