@@ -1,7 +1,19 @@
-h1 {
-
+.ClockTime {
+    font-weight: lighter;
+    font-size: 6rem;
+    margin-top: -1.8rem;
 }
 
-h2 {
-    
+.ClockDay {
+    font-weight: lighter;
+    font-size: 3rem;
+    margin-top: -0.8rem;
+    text-align: left;
+}
+
+.ClockDate {
+    font-weight: lighter;
+    font-size: 2rem;
+    margin-top: -0.5rem;
+    text-align: left;
 }

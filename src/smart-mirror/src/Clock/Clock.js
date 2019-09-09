@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import './Clock.css';
-
+var weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const months = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
 
 export default class Clock extends Component {
     constructor(props) {
@@ -31,11 +34,14 @@ export default class Clock extends Component {
         return (
             <div className="row">
                 <div className="col p-0">
-                    <div className="row mx-auto">
-                        <h1>{this.state.date.toLocaleTimeString()}</h1>
+                    <div className="row mx-auto ClockTime">
+                        {this.state.date.getHours().toString().padStart(2, '0')}:{this.state.date.getMinutes().toString().padStart(2, '0')}
                     </div>
-                    <div className="row mx-auto">
-                        <h2>{this.state.date.toDateString()}</h2>
+                    <div className="row mx-auto ClockDay">
+                        {weekdays[this.state.date.getDay()]}
+                    </div>
+                    <div className="row mx-auto ClockDate">
+                        {months[this.state.date.getMonth()]} {this.state.date.getDate().toString().padStart(2, '0')}
                     </div>
                 </div>
             </div>
