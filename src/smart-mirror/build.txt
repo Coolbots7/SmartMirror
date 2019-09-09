@@ -1,0 +1,11 @@
+  • electron-builder  version=21.2.0 os=10.0.17763
+  • loaded configuration  file=package.json ("build" field)
+  • public/electron.js not found. Please see https://medium.com/@kitze/%EF%B8%8F-from-react-to-an-electron-app-ready-for-production-a0468ecb1da3
+  • loaded parent configuration  preset=react-cra
+  • description is missed in the package.json  appPackageFile=C:\Workspace\SmartMirror\src\smart-mirror\package.json
+  • author is missed in the package.json  appPackageFile=C:\Workspace\SmartMirror\src\smart-mirror\package.json
+  • packaging       platform=win32 arch=x64 electron=6.0.7 appOutDir=dist\win-unpacked
+  ⨯ Application entry file "build\electron.js" in the "C:\Workspace\SmartMirror\src\smart-mirror\dist\win-unpacked\resources\app.asar" does not exist. Seems like a wrong configuration.  stackTrace=
+                                                                                                                                                                                            Error: Application entry file "build\electron.js" in the "C:\Workspace\SmartMirror\src\smart-mirror\dist\win-unpacked\resources\app.asar" does not exist. Seems like a wrong configuration.
+                                                                                                                                                                                                at error (C:\Users\coolb\AppData\Roaming\npm\node_modules\electron-builder\node_modules\app-builder-lib\src\asar\asarFileChecker.ts:7:12)
+                                                                                                                                                                                                at checkFileInArchive (C:\Users\coolb\AppData\Roaming\npm\node_modules\electron-builder\node_modules\app-builder-lib\src\asar\asarFileChecker.ts:33:11)
