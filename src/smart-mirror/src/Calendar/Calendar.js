@@ -48,11 +48,34 @@ export default class Calendar extends Component {
     }
     
     render() {
+      
       if(this.state.sign) {
         if (this.state.events) {
-          return(this.state.events.map(event => (
-            <Event key={event.id} event={JSON.stringify(event)} />
-          )));
+          let events = this.state.events.filter(function(event) {
+            let start = event.start.hasOwnProperty("date") ? event.start.date : event.start.dateTime;
+            let startDate = new Date(start);
+    
+            let now = new Date();
+            now.setDate(now.getDate() + 7);
+            return startDate <= now;
+          });
+
+          if(events.length > 0) {
+          return(
+            <div className="d-flex flex-column">
+              {events.map(event => (
+                <Event key={event.id} event={JSON.stringify(event)} />
+              ))}
+          </div>
+          );
+          }
+          else {
+            return (
+              <div>
+                No Events
+              </div>
+            )
+          }
         }
 
         return(

@@ -1,12 +1,22 @@
 .CalendarEvent {
     padding: 0.5rem;
     color: #FFFFFF;
+    width:auto;
+}
+
+.EventDetails {
+    width: 100%;
 }
 
 .EventTitle {
     text-align: left;
+    white-space: pre;
+    padding: 0;
 }
 
-.EventDuration {
-
+.EventTime {
+    text-align: left;
+    white-space: pre;
+    padding: 0;
+    width: 6rem;
 }
