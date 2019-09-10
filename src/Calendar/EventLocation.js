@@ -1,6 +1,8 @@
-import React, { Component } from 'react';
-import './EventLocation.css';
-const axios = require('axios');
+import React, { Component } from 'react'
+import './EventLocation.css'
+import Icon from '@mdi/react'
+import { mdiCar } from '@mdi/js'
+const axios = require('axios')
 
 let AppID = "e5ccd03e";
 let ApiKey= "8e733637ef909bd25f22f34858e9919a";
@@ -72,7 +74,7 @@ export default class EventLocation extends Component {
             let leave_time = new Date(this.props.startDate);
             leave_time.setMinutes(leave_time.getMinutes() - travel_time);
             return (
-                <div className="EventLocation"><i className="fas fa-car pr-1"></i> {travel_time} min away, leave at {leave_time.toLocaleTimeString()}</div>
+                <div className="EventLocation"><Icon path={mdiCar} size='1.2rem' color='#FFFFFF'/> {travel_time} min away, leave at {leave_time.toLocaleTimeString()}</div>
             );
         }
 

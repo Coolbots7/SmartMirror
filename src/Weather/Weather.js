@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './Weather.css';
 import axios from 'axios';
+import Icon from '@mdi/react'
+import {mdiUmbrella, mdiWeatherWindy, mdiWeatherSunny } from '@mdi/js'
 
 let apiKey = 'b37bbdb794c3f7c244931da31c637860';
 let zip = '91016,us';
@@ -50,7 +52,7 @@ export default class Weather extends Component {
                     {/** 24H Temperature Graph */}                    
                     <div className="row">
                       <div className="CurrentWeather">
-                        {Math.floor(weather.main.temp).toString()}&#176; <i className="fas fa-sun"></i>
+                        {Math.floor(weather.main.temp).toString()}&#176; <Icon path={mdiWeatherSunny} size='6rem' color='#FFFFFF'/>
                       </div>
                     </div>
                     <div className="row">
@@ -59,15 +61,15 @@ export default class Weather extends Component {
                       </div>
                     </div>
                     <div className="row">
-                        {/** Percipitation */}
+                        {/** Precipitation */}
                         <div className="col-auto WeatherRow">
-                          <div className="WeatherText">{precipitation.toString()}% <i className="fas fa-2x fa-umbrella WeatherIcon"></i></div>
+                          <div className="WeatherText">{precipitation.toString()}% <Icon path={mdiUmbrella} size='1.8rem' color='#FFFFFF'/></div>
                         </div>                        
                     </div>
                     <div className="row">
                         {/** Wind */}
                         <div className="col-auto WeatherRow">                          
-                          <div className="WeatherText">{Math.ceil(weather.wind.speed).toString()} MPH <i className="fas fa-2x fa-wind WeatherIcon"></i></div>
+                          <div className="WeatherText">{Math.ceil(weather.wind.speed).toString()} MPH <Icon path={mdiWeatherWindy} size='1.8rem' color='#FFFFFF'/></div>
                         </div>                    
                     </div>
                     {/* <div className="row">

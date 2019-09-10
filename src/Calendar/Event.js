@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './Event.css';
 import EventLocation from './EventLocation'
+import Icon from '@mdi/react'
+import { mdiCalendar } from '@mdi/js'
 
 export default class Event extends Component {    
 
@@ -38,7 +40,7 @@ export default class Event extends Component {
         return(
             <div className="CalendarEvent">
                 <div className="d-inline-flex justify-content-start EventDetails">
-                    <div className="mr-2"><i className="fas fa-calendar-day"></i></div>
+                    <div className="mr-2"><Icon path={mdiCalendar} size='1.8rem' color='#FFFFFF'/></div>
                     <div className="EventTime mr-1">{this.getTimeString(startDate)}</div>
                     <div className="text-left EventTitle">{event.summary}</div>                
                 </div>
