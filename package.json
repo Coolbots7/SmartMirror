@@ -18,7 +18,8 @@
     "eject": "react-scripts eject",
     "electron": "electron .",
     "electron-start": "node electron-wait-react",
-    "react-start": "react-scripts start"
+    "react-start": "react-scripts start",
+    "package-win": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName='SmartMirror"
   },
   "eslintConfig": {
     "extends": "react-app"
