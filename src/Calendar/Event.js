@@ -41,7 +41,7 @@ export default class Event extends Component {
             <div className="CalendarEvent">
                 <div className="d-inline-flex justify-content-start EventDetails">
                     <div className="mr-2"><Icon path={mdiCalendar} size='1.8rem' color='#FFFFFF'/></div>
-                    <div className="EventTime mr-1">{this.getTimeString(startDate)}</div>
+                    <div className="EventTime mr-1">{startDate.getHours().toString().padStart(2, '0')}:{startDate.getMinutes().toString().padStart(2, '0')}</div>
                     <div className="text-left EventTitle">{event.summary}</div>                
                 </div>
                 {(event.hasOwnProperty('location') && this.isToday(startDate)) &&

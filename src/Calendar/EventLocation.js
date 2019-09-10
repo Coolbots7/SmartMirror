@@ -74,7 +74,7 @@ export default class EventLocation extends Component {
             let leave_time = new Date(this.props.startDate);
             leave_time.setMinutes(leave_time.getMinutes() - travel_time);
             return (
-                <div className="EventLocation"><Icon path={mdiCar} size='1.2rem' color='#FFFFFF'/> {travel_time} min away, leave at {leave_time.toLocaleTimeString()}</div>
+                <div className="EventLocation"><Icon path={mdiCar} size='1.2rem' color='#FFFFFF'/> {travel_time} min away, leave at {leave_time.getHours().toString().padStart(2, '0')}:{leave_time.getMinutes().toString().padStart(2, '0')}</div>
             );
         }
 
